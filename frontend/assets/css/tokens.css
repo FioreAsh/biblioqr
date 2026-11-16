@@ -1,0 +1,20 @@
+:root{
+  /* Layout: header de cristal sticky; hero full-bleed con buscador flotante de 3 columnas y pase de ejemplo; catálogo editorial con carrito lateral (desktop) o bottom-sheet (móvil). Light mode único, definido por el brief. */
+  --navy:#0F172A; --gold:#EAB308; --gold-hero:#FACC15; --amber:#F59E0B;
+  --cta:#0077B6; --cta-deep:#006399;
+  --primary:#16689A; --primary-deep:#0F4C81; --blue:#2196F3;
+  --white:#FFFFFF; --base:#F1F5F9;
+  --ink:#0B2540; --ink-2:#3F566E; --ink-3:#5A6F85;
+  --line:rgba(22,104,154,.14); --line-strong:rgba(22,104,154,.30);
+  --glass:rgba(255,255,255,.78);
+  --shadow:0 1px 1px rgba(15,76,129,.04),0 4px 12px rgba(15,76,129,.05),0 18px 44px rgba(15,76,129,.08);
+  --st-disponible-fg:#0B6B45; --st-disponible-bg:#E3F5EC; --st-disponible-dot:#12A15F;
+  --st-reservado-fg:#8A5300; --st-reservado-bg:#FDF1D3; --st-reservado-dot:#F59E0B;
+  --st-prestado-fg:#0F4C81; --st-prestado-bg:#E2EEF8; --st-prestado-dot:#2196F3;
+  --st-mantenimiento-fg:#475569; --st-mantenimiento-bg:#EDF1F5; --st-mantenimiento-dot:#94A3B8;
+  --st-perdido-fg:#A12A1B; --st-perdido-bg:#FBE5E1; --st-perdido-dot:#DC4A3A;
+  --f-display:'Playfair Display',Georgia,'Times New Roman',serif;
+  --f-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ease:cubic-bezier(.23,1,.32,1);
+  --ease-drawer:cubic-bezier(.32,.72,0,1);
+}

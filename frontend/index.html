@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>BiblioQR</title>
+  <meta name="description" content="BiblioQR: catálogo, reservas con código QR, préstamos y devoluciones de la biblioteca.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F172A'/%3E%3Cpath d='M9 8h6v6H9zM17 8h6v6h-6zM9 18h6v6H9z' fill='%23EAB308'/%3E%3Cpath d='M19 18h4v2h-2v4h-2z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/cabecera.css">
+  <link rel="stylesheet" href="assets/css/catalogo.css">
+  <link rel="stylesheet" href="assets/css/capas.css">
+  <link rel="stylesheet" href="assets/css/vistas.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" defer></script>
+  <script type="module" src="assets/js/app.js"></script>
+</head>
+<body>
+  <div class="mesh" aria-hidden="true"></div>
+
+  <header class="top" id="top" hidden>
+    <div class="wrap top__in">
+      <a class="brand" href="#/" aria-label="BiblioQR, inicio">BIBLIO<b>QR</b></a>
+      <nav class="nav" id="nav" aria-label="Módulos"></nav>
+      <div class="tools" id="tools"></div>
+    </div>
+  </header>
+
+  <main id="vista"><div class="boot"><span class="brand">BIBLIO<b>QR</b></span></div></main>
+
+  <!-- Capas reutilizables (sheet en móvil, modal en desktop) -->
+  <div class="layer" id="layer-cart" inert>
+    <div class="layer__scrim" data-action="cerrar"></div>
+    <div class="layer__panel" role="dialog" aria-modal="true" aria-label="Tu solicitud de reserva">
+      <button class="icon-btn layer__x" data-action="cerrar" aria-label="Cerrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <div id="cart-sheet" style="padding-right:36px"></div>
+    </div>
+  </div>
+  <div class="layer" id="layer-pass" inert>
+    <div class="layer__scrim" data-action="cerrar"></div>
+    <div class="layer__panel pass" role="dialog" aria-modal="true" aria-labelledby="pass-title" id="pass-panel"></div>
+  </div>
+  <div class="layer layer--wide" id="layer-detail" inert>
+    <div class="layer__scrim" data-action="cerrar"></div>
+    <div class="layer__panel detail" role="dialog" aria-modal="true" aria-labelledby="det-title" id="detail-panel"></div>
+  </div>
+  <div class="layer layer--wide" id="layer-form" inert>
+    <div class="layer__scrim" data-action="cerrar"></div>
+    <div class="layer__panel" role="dialog" aria-modal="true" aria-labelledby="form-title" id="form-panel"></div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="wrap" style="padding:40px 16px">BiblioQR necesita JavaScript activado.</p></noscript>
+</body>
+</html>

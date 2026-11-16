@@ -1,0 +1,53 @@
+[hidden]:not([hidden=until-found i]){display:none!important}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{font-family:var(--f-body);font-size:15px;line-height:1.5;color:var(--ink);background:var(--base);min-height:100vh;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:rgba(255,255,255,.94)}
+/* Malla radial azul/dorado fija: es lo que el cristal de las tarjetas difumina */
+.mesh{position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+  radial-gradient(620px 520px at 8% 34%,rgba(33,150,243,.24),transparent 68%),
+  radial-gradient(560px 480px at 94% 52%,rgba(250,204,21,.26),transparent 68%),
+  radial-gradient(760px 560px at 52% 108%,rgba(22,104,154,.20),transparent 70%),
+  radial-gradient(420px 360px at 70% 12%,rgba(33,150,243,.14),transparent 70%),
+  var(--base)}
+h1,h2,h3{font-family:var(--f-display);margin:0;color:var(--ink);text-wrap:balance}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:var(--cta)}
+.num{font-variant-numeric:tabular-nums}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:8px}
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.7);box-shadow:var(--shadow),inset 0 0 0 1px var(--line)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--primary)}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 16px;border-radius:12px;border:1px solid transparent;font-weight:600;font-size:14px;line-height:1;transition:background-color .18s var(--ease),border-color .18s var(--ease),transform .16s var(--ease),box-shadow .18s var(--ease),color .18s var(--ease);white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn--sm{min-height:34px;padding:0 12px;font-size:13px}
+.btn--primary{background:var(--cta);color:#fff;box-shadow:0 1px 2px rgba(0,99,153,.3),inset 0 1px 0 rgba(255,255,255,.16)}
+.btn--ghost{background:rgba(255,255,255,.9);border-color:var(--line-strong);color:var(--primary-deep)}
+.btn--ok{background:#E3F5EC;border-color:rgba(18,161,95,.35);color:var(--st-disponible-fg)}
+.btn[disabled],.btn[aria-disabled="true"]{cursor:not-allowed}
+.btn--primary[disabled]{background:#9DB9CC;box-shadow:none}
+.btn--primary[aria-disabled="true"]{background:#7C98AD;box-shadow:none}
+.btn--ghost[disabled]{color:var(--ink-3);background:rgba(255,255,255,.6)}
+@media (hover:hover) and (pointer:fine){
+  .btn--primary:not([disabled]):not([aria-disabled="true"]):hover{background:var(--cta-deep)}
+  .btn--ghost:not([disabled]):hover{border-color:var(--cta);background:#fff}
+  .btn--ok:hover{background:#D3EEE0}
+}
+.toast{position:fixed;z-index:60;left:50%;bottom:calc(88px + env(safe-area-inset-bottom,0px));transform:translate(-50%,12px);max-width:min(92vw,420px);padding:12px 16px;border-radius:14px;background:var(--navy);color:#fff;font-size:14px;box-shadow:0 10px 30px rgba(11,37,64,.3);opacity:0;pointer-events:none;transition:opacity .22s var(--ease),transform .26s var(--ease)}
+.toast[data-show="true"]{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.toast[data-tone="warn"]{background:#5E3D00}
+.toast__btn{margin-left:8px;border:0;background:var(--gold-hero);color:#3D2A00;font-weight:600;font-size:13px;padding:5px 10px;border-radius:8px}
+@media (min-width:1024px){.toast{bottom:28px}}
+
+.fab{position:fixed;z-index:20;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 20px 0 16px;border-radius:18px;border:0;background:var(--cta);color:#fff;font-weight:600;font-size:15px;box-shadow:0 8px 24px rgba(0,99,153,.4);transition:transform .16s var(--ease)}
+.fab:active{transform:scale(.97)}
+.fab b{background:var(--gold-hero);color:#3D2A00;border-radius:8px;padding:2px 8px;font-size:14px}
+@media (min-width:1024px){.fab{display:none}}
+.foot{padding-block:8px 36px;font-size:12.5px;color:var(--ink-3)}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
+}
